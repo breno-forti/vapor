@@ -23,6 +23,7 @@ $page_title = "Game";
     <link rel="stylesheet" href="./assets/global.css">
     <link rel="stylesheet" href="./assets/normalize.css">
     <link rel="stylesheet" href="./assets/style.css">
+    <script src="./assets/scripts.js"></script>
     <title>Vapor - <?php echo $page_title; ?></title>
 </head>
 
@@ -35,15 +36,16 @@ $page_title = "Game";
                     <img src="./public/images/logo-com-texto.png" alt="Logo Vapor Control Panel" width="60%">
                 </div>
             </a>
-            <div id="admin_name">Welcome to Dashboard, <?php echo $administrator['nome']?> </div>
+            <div id="admin_name">Welcome to Dashboard, <?php echo $administrator['nome']?> - <span id="clock"></span> </div>
+
+            <script>
+                updateClock()
+                // ativar o script abaixo para mudar as cores do top menu
+                updateColor()
+            </script>
+
         </div>
         
         <div id="main_container">
-
-        <script>
-            atualizarRelogio()
-            // ativar o script abaixo para mudar as cores do top menu
-            // atualizarCor()
-        </script>
 
         <?php require("./modules/side_menu.php") ?>

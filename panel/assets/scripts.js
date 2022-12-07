@@ -1,142 +1,69 @@
-// function removesucessmessage() {
-//     let sucessMessage = document.getElementById("mensagem-sucesso")
-
-//     if (sucessMessage != null) {
-//         sucessMessage.remove()
-//     }
-// }
-
-
-function removeElementById(idOfElement) {
-    const element = document.getElementById(idOfElement)
-
-    if (element != null) {
-        element.remove()
-    }
-}
-
-
-function excluirjogo(idjogo) {
-    let excluirjogo = confirm("Realmente deseja excluir esse jogo?")
-
-    if(excluirjogo == true) {
-       window.open("excluir-jogo.php?id=" + idjogo, "_SELF")
-    }
-}
-
-function excluiridioma(ididioma) {
-    let excluiridioma = confirm("Realmente deseja excluir esse idioma?")
-
-    if(excluiridioma == true) {
-       window.open("excluir-idioma.php?id=" + ididioma, "_SELF")
-    }
-}
-
-function excluirplataforma(idplataforma) {
-    let excluirplataforma = confirm("Realmente deseja excluir essa plataforma?")
-
-    if(excluirplataforma == true) {
-       window.open("excluir-plataforma.php?id=" + idplataforma, "_SELF")
-    }
-}
-
-function excluircategoria(idcategoria) {
-    let excluircategoria = confirm("Realmente deseja excluir essa categoria?")
-
-    if(excluircategoria == true) {
-       window.open("excluir-categoria.php?id=" + idcategoria, "_SELF")
-    }
-}
-
-function arquivarmensagem(idmensagem) {
-    let arquivarmensagem = confirm("Realmente deseja arquivar essa mensagem?")
-
-    if(arquivarmensagem == true) {
-        window.open("arquivar.php?id=" + idmensagem, "_SELF")
-    }
-}
+// FUNÇÃO PARA MOSTRAR O RELOGIO
 
 function obterDataHoraAtual() {
     const data = new Date()
-    let horas = data.getHours()
-    let minutos = data.getMinutes()
-    let segundos = data.getSeconds()
-    let dias = data.getDay()
-    let mes = data.getMonth()+1
-    let anos = data.getFullYear()
-   
-    
-    
-    if (dias <10) {
-        dias = "0" + dias
+    let hour = data.getHours()
+    let minute = data.getMinutes()
+    let second = data.getSeconds()
+    let day = data.getDate()
+    let month = data.getMonth() + 1
+    let year = data.getFullYear()
+
+    if (hour <= 9) {
+        hour = "0" + hour
     }
 
-    if (mes <10) {
-        mes = "0" + mes
+    if (minute <= 9) {
+        minute = "0" + minute
     }
 
-    if (horas <10) {
-      hora = "0" + hora
+    if (second <= 9) {
+        second = "0" + second
     }
-  
-    if (minutos <10) {
-      minutos = "0" + minutos
+    if (day <= 9) {
+        day = "0" + day
     }
-  
-    if (segundos <10) {
-      segundos = "0" + segundos
+
+    if (month <= 9) {
+        month = "0" + month
     }
+
+
+
+    let real_date = day + "/" + month + "/" + year + " - " + hour + ":" + minute + ":" + second;
+
+
+    return real_date
+}
+
+function updateClock() {
+
+    const clock = document.getElementById('clock')
+    clock.innerHTML = obterDataHoraAtual()
+
+    setInterval(function () {
+        clock.innerHTML = obterDataHoraAtual()
+        1000
+    })
+
+}
+
+
+//FUNÇÃO PARA MUDAR AS CORES
+
+function random_color(){
+    const color_r = Math.floor(Math.random() * 256)
+    const color_g = Math.floor(Math.random() * 256)
+    const color_b = Math.floor(Math.random() * 256)
+    const cor = "rgb(" + color_r + "," + color_g + "," + color_b + ")"
   
-    let dataAtual = " - " + dias + "/" + mes + "/" + anos + " - " + horas + ":" + minutos + ":" + segundos
-  
-    return dataAtual
+    document.getElementById("admin_name").style.color = cor
   }
-
-  function atualizarRelogio() {
-    const relogio = document.getElementById('relogio')
-    relogio.innerHTML =obterDataHoraAtual()
-
-    setInterval(function (){
-        relogio.innerHTML = obterDataHoraAtual()
-    }, 1000)
+  function updateColor(){
+    setInterval(random_color, 1000)
   }
-
-// função para trocar as cores do texto no top menu, para ativar é preciso desabilitar a cor da class .nome do top-container no css 
-
-//   function getRandomInt(min, max) {
-//     min = Math.ceil(min);
-//     max = Math.floor(max);
-//     return Math.floor(Math.random() * (max - min) + min);
-//   }
-
-//   function getRandomColor() {
-   
-//     const min = 1
-//     const max = 4 
-
-//     let cor = getRandomInt(min,max)
-//     const id = document.getElementById("top-container")
-//     console.log(id)
-
-//     if (cor == 1) {
-//         id.style.color = 'red';
-//     }
-
-//     if (cor == 2) {
-//         id.style.color = 'green';
-//     }
-
-//     if (cor == 3) {
-//         id.style.color = 'blue';
-//     }
-
-   
-// }
-   
-//   function atualizarCor() {
-//     getRandomColor()
-
-//     setInterval(function (){
-//         getRandomColor()
-//     }, 1000) 
-//   }
+  
+  function text_uppercase(element){
+    let value_line = element.value
+    element.value = (value_line.toUpperCase())
+  }
