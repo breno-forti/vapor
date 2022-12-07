@@ -23,8 +23,8 @@ $categorys = mysqli_query($conn, $query_category);
             <?php while ($category = mysqli_fetch_array($categorys)) { ?>
                 <tr>
                     <td><?= $category['nome'] ?></td>
-                    <td class="table_item"><a href="category_edit.php?id=<?= $category['id'] ?>">Edit</td></a>
-                    <td class="table_item"><a href="category_delete.php?id=<?= $category['id'] ?>">Delete</td></a>
+                    <td><a href="category_edit.php?id=<?= $category['id'] ?>">Edit</td></a>
+                    <td><a onclick="categoryDelete(<?=$category['id']?>)" href="#">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>

@@ -25,8 +25,8 @@ $platforms = mysqli_query($conn, $query_platform);
             <?php while ($platform = mysqli_fetch_array($platforms)) { ?>
                 <tr>
                     <td><?= $platform['nome'] ?></td>
-                    <td class="table_item"><a href="platform_edit.php?id=<?= $platform['id'] ?>">Edit</td></a>
-                    <td class="table_item"><a href="platform_delete.php?id=<?= $platform['id'] ?>">Delete</td></a>
+                    <td><a href="platform_edit.php?id=<?= $platform['id'] ?>">Edit</td></a>
+                    <td><a onclick="platformDelete(<?=$platform['id']?>)" href="#">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>

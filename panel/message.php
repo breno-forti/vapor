@@ -23,8 +23,8 @@ $messages = mysqli_query($conn, $message_query);
                 <tr>
                     <td><?= $message['nome'] ?></td>
                     <td><?= $message['assunto'] ?></td>
-                    <td class="item-lista"><a href="message_view.php?id=<?= $message['id'] ?>">View</a></td>
-                    <td class="item-lista"><a href="message_archive.php?id=<?= $message['id'] ?>">Archive</a></td>
+                    <td><a href="message_view.php?id=<?= $message['id'] ?>">View</a></td>
+                    <td><a onclick="messageArchive(<?= $message['id'] ?>)" href="#">Archive</a></td>
                 </tr>
             <?php } ?>
         </table>

@@ -21,8 +21,8 @@ $idioms = mysqli_query($conn, $idiom_query);
             <?php while ($idiom = mysqli_fetch_array($idioms)) { ?>
                 <tr>
                     <td><?= $idiom['nome'] ?></td>
-                    <td class="table_item"><a href="idiom_edit.php?id=<?= $idiom['id'] ?>">Edit</a></td>
-                    <td class="table_item"><a href="idiom_delete.php?id=<?= $idiom['id'] ?>">Delete</a></td>
+                    <td><a href="idiom_edit.php?id=<?= $idiom['id'] ?>">Edit</a></td>
+                    <td><a onclick="idiomDelete(<?=$idiom['id']?>)" href="#">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>
@@ -33,3 +33,5 @@ $idioms = mysqli_query($conn, $idiom_query);
         <br>
     </div>
 </div>
+
+<?php require("./modules/footer.php") ?>

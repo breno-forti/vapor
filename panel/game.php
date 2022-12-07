@@ -29,7 +29,7 @@ $games = mysqli_query($conn, $games_query);
                     <td class="table_item"><a href="game_idiom_edit.php?id=<?= $game['id'] ?>">Idiom</td></a>
                     <td class="table_item"><a href="game_platform_edit.php?id=<?= $game['id'] ?>">Platform</td></a>
                     <td class="table_item"><a href="game_edit.php?id=<?= $game['id'] ?>">Edit</td></a>
-                    <td class="table_item"><a href="game_delete.php?id=<?= $game['id'] ?>">Delete</td></a>
+                    <td><a onclick="gameDelete(<?=$game['id']?>)" href="#">Delete</a></td>
                 </tr>
             <?php } ?>
         </table>
