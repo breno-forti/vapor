@@ -1,7 +1,7 @@
 # 🖥️ Welcome to Vapor!
 
 Hello Buddy! 
-This project was made exclusive for study on my curse.  
+This project was made exclusive for study on my course.  
 Your motivation was create something about games. Well, the base of this project was Steam, a online shop of many games.
 
 # Used technologys:
@@ -36,7 +36,7 @@ Open this site `http://localhost/vapor` and have fun!
 
 # Project status:
 
-* **Working Wet.**
+* **Working Yet.**
 
 # Autors and acknowledgment:
 
