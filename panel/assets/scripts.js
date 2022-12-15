@@ -40,7 +40,7 @@ function categoryDelete(categoryId) {
 }
 
 function messageArchive(messageId) {
-    let messageArchive = confirm("You really want to delete this Message?")
+    let messageArchive = confirm("You really want to archive this Message?")
 
     if (messageArchive == true) {
         window.open("message_archive.php?id=" + messageId, "_SELF")

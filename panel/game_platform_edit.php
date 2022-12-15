@@ -39,7 +39,7 @@ $platform_register = mysqli_query($conn, $platform_register_query);
         </table>
         <br>
         <?php if ($platforms->num_rows == 0) { ?>
-            <p class="error_message">Don't exist any register platform to <?= $game['nome'] ?></p>
+            <p class="empty_item">Don't exist any register platform to <?= $game['nome'] ?></p>
         <?php }  ?>
         <br>
     </div>
