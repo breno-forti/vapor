@@ -1,7 +1,7 @@
 # 🖥️ Welcome to Vapor!
 
 Hello Buddy! 
-This project was made exclusive for study on my course.  
+This project was made exclusive for study.  
 Your motivation was create something about games. Well, the base of this project was Steam, a online shop of many games.
 
 # Used technologys:
